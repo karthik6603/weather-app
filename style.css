@@ -1,0 +1,162 @@
+/* Professional Weather Application Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #C4E1F6;
+  padding: 20px;
+  color: #2c3e50;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 
+              0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-info {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.card-content {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+#country {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+#currentLocation {
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+#temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  color: #1e293b;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.03em;
+}
+
+.card-weather {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.card-weather:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.card-weather-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.card-weather-desc {
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  #temperature {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  #temperature {
+    font-size: 2.25rem;
+  }
+
+  .card-weather {
+    padding: 1rem;
+  }
+}
+
+/* Loading State */
+.card-content:empty::before {
+  content: "Loading...";
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Smooth Animations */
+.card {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+  }
+}
